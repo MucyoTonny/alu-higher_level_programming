@@ -1,26 +1,21 @@
-es (18 sloc)  646 Bytes
-
 #!/usr/bin/python3
-"""
-more class base
-"""
+"""Defines a class Student."""
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+class Student:
+    """Represent a student."""
 
+    def __init__(self, first_name, last_name, age):
+        """Initialize a new Student.
+        Args:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-class Rectangle(BaseGeometry):
-    """ definition of a Rectangle """
-    def __init__(self, width, height):
-        """ constructor and width, height"""
-        self.__width = width
-        self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
-
-    def area(self):
-        return self.__width * self.__height
-
-    def __str__(self):
-        """ print """
-        return ("[Rectangle] " + str(self.__width) + "/" + str(self.__height))
+    def to_json(self):
+        """Get a dictionary representation of the Student."""
+        return self.__dict__
