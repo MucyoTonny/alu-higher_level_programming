@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" Module = 1-my_list.py"""
+''' Module: 1-my_list'''
 
 
 class MyList(list):
-    """ Class documented"""
+    ''' Represents a MyList'''
 
     def print_sorted(self):
-        """ Method documented"""
+        '''prints the list, but sorted '''
         print(sorted(self))
